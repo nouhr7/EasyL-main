@@ -55,9 +55,6 @@ class Syndicat(models.Model):
     name_syndic = models.CharField(max_length=30)
     num_tel = models.IntegerField()
     date_de_création = models.DateTimeField(auto_now_add=True)
-    gare_associé = models.ForeignKey(
-        Gare, on_delete= models.CASCADE
-    )
 
 class Ticket(models.Model):
     #Ticket(id_ticket, prix, nombre_de_places, creation_time, statut, #id_line, #id_user, #plaque)
@@ -116,17 +113,6 @@ class Payment_vehicule(models.Model):
     vehicule_pay = models.ForeignKey(
         Vehicule, on_delete=models.PROTECT
     )
-
-class vehicule_user(models.Model):
-    User_vehicule = models.ForeignKey(
-        User, on_delete=models.CASCADE,
-    )
-    Plaque_vehicule = models.ForeignKey(
-        Vehicule, on_delete=models.CASCADE,
-    )
-
-    date_de_creation = models.DateTimeField(auto_now_add=True)
-
 
 class Syndicat_gare(models.Model):
     gare = models.ForeignKey(
