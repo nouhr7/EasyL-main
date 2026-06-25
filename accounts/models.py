@@ -114,6 +114,20 @@ class Payment_vehicule(models.Model):
         Vehicule, on_delete=models.PROTECT
     )
 
+class vehicule_user(models.Model):
+    User_vehicule = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+    )
+    Plaque_vehicule = models.ForeignKey(
+        Vehicule, on_delete=models.CASCADE,
+    )
+
+    date_de_creation = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [('User_vehicule', 'Plaque_vehicule')]
+
+
 class Syndicat_gare(models.Model):
     gare = models.ForeignKey(
         Gare, null= False, on_delete=models.CASCADE
