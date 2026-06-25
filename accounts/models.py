@@ -46,6 +46,9 @@ class Vehicule(models.Model):
     date_de_mise_en_circulation = models.DateField()
     type_car = models.CharField(max_length=20)
     
+    line = models.ForeignKey(
+        Line, on_delete=models.CASCADE
+    )
     proprietaire = models.ForeignKey(
         User, on_delete=models.CASCADE
     )
