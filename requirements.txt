@@ -1,0 +1,13 @@
+# Runtime dependencies (mirrors Pipfile [packages]).
+#
+# Pipfile.lock is the source of truth. After changing dependencies, regenerate
+# this file with exact, reproducible pins:
+#
+#     pipenv requirements > requirements.txt
+#
+# Left unpinned here to match the Pipfile ("*"); pip resolves the latest
+# compatible versions. Requires Python >= 3.12 (Django 6.x).
+
+Django
+psycopg[binary]
+django-debug-toolbar
