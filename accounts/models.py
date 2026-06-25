@@ -13,7 +13,7 @@ class User(models.Model):
     #id_user, last_name, first_name, num_tel, #id_profile
     last_name = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)
-    num_tel = models.IntegerField()
+    num_tel = models.CharField(max_length=20)
  
     profile = models.ForeignKey(
         Profile,
@@ -53,7 +53,7 @@ class Vehicule(models.Model):
 class Syndicat(models.Model):
     #Syndicat (id_syndic, name_syndic, num_tel, date_de_creation, #id_gare)
     name_syndic = models.CharField(max_length=30)
-    num_tel = models.IntegerField()
+    num_tel = models.CharField(max_length=20)
     date_de_création = models.DateTimeField(auto_now_add=True)
 
 class Ticket(models.Model):
